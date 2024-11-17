@@ -37,7 +37,7 @@ def replace_block(workflow, block_start, new_content):
     
     # 找到块的结束位置（下一个空行或下一部分开始）
     end_index = start_index + 1
-    while end_index < len(lines) and lines[end_index].startswith(indent + '-'):
+    while end_index < len(lines) and (lines[end_index].startswith(indent + '-') or lines[end_index].strip() == ''):
         end_index += 1
 
     new_block = f"{block_start}\n{new_content}"

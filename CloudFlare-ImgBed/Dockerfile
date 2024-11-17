@@ -5,7 +5,7 @@ FROM node:14
 WORKDIR /app/
 
 # 安装 安装必要的软件包
-RUN apt-get update && apt-get --no-cache install -y git curl bash nginx supervisor \
+RUN apt-get update && apt-get --no-cache install -y git curl bash nginx su-exec supervisor \
     mkdir -p /var/run && chown -R nginx:nginx /var/run
 
 
@@ -34,7 +34,7 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh && ls -la /entrypoint.sh && /entrypoint.sh version
 
 # 安装项目依赖
-RUN npm install
+#RUN npm install
 
 # 设置环境变量
 ARG ModerateContentApiKey
