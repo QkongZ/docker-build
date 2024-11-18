@@ -4,9 +4,9 @@ on:
   push:
     paths:
       #更改对应文件夹项目名
-      - 'project1/**'
-      - 'project2/**'
-      - 'project3/**'
+      - 'alist-for-PaaS/**'
+      - 'CloudFlare-imgBed/**'
+      
 
 jobs:
   build-and-push:
@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
          #更改对应文件夹项目名
-        folder: [project1, project2, project3]
+        folder: [alist-for-PaaS, CloudFlare-imgBed]
 
     steps:
       - name: Checkout repository

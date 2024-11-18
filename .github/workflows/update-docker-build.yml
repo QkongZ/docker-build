@@ -2,22 +2,23 @@ name: Update Docker Build Workflow
 
 on:
   push:
+    branches:
+      - main
     paths:
       - '**/*'  # 监听所有文件的变更
 
 permissions:
   contents: write
+  actions: write
+  workflows: write  # 关键：允许修改工作流文件
 
 jobs:
   update-workflow:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
@@ -27,7 +28,8 @@ jobs:
 
       - name: Commit updated workflow
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"

@@ -29,19 +29,13 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh && ls -la /entrypoint.sh && /entrypoint.sh version
 
 # 设置环境变量
-ARG ModerateContentApiKey
-ARG BASIC_USER
-ARG BASIC_PASS
-ARG TG_BOT_TOKEN
-ARG TG_CHAT_ID
+ARG name
+ARG compatibility_date
 
-ENV ModerateContentApiKey=${ModerateContentApiKey} \
-    AllowRandom=true \
-    BASIC_USER=${BASIC_USER} \
-    BASIC_PASS=${BASIC_PASS} \
-    TG_BOT_TOKEN=${TG_BOT_TOKEN} \
-    TG_CHAT_ID=${TG_CHAT_ID}
+ENV name = "cloudflare-imgbed" \
+    compatibility_date = "2021-09-01" \
 
+    
 # 暴露应用运行的端口
 EXPOSE 80
 

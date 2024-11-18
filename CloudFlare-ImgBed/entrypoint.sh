@@ -12,8 +12,8 @@ npm install
 
 # 创建 wrangler.toml 文件
 cat <<EOF > /app/wrangler.toml
-name = "cloudflare-imgbed"
-compatibility_date = "2024-07-24"
+name = "${name}"
+compatibility_date = "${compatibility_date}"
 
 [vars]
 ModerateContentApiKey = "${ModerateContentApiKey}"
