@@ -33,7 +33,7 @@ ARG name
 ARG compatibility_date
 
 ENV name = "cloudflare-imgbed" \
-    compatibility_date = "2021-09-01" \
+    compatibility_date = "2024-09-01" \
 
     
 # 暴露应用运行的端口

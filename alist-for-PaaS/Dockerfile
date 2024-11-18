@@ -62,5 +62,6 @@ ENV PUID=0 PGID=0 UMASK=022
 VOLUME /opt/alist/data/
 EXPOSE 80
 
+
 # 设置容器启动命令
 CMD [ "/entrypoint.sh" ]
