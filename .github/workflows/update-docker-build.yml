@@ -9,8 +9,6 @@ on:
 
 permissions:
   contents: write
-  actions: write
-  workflows: write  # 关键：允许修改工作流文件
 
 jobs:
   update-workflow:
