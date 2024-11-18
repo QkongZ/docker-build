@@ -5,6 +5,9 @@ on:
     paths:
       - '**/*'  # 监听所有文件的变更
 
+permissions:
+  contents: write
+
 jobs:
   update-workflow:
     runs-on: ubuntu-latest
