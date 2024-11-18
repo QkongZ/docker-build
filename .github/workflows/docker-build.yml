@@ -4,8 +4,8 @@ on:
   push:
     paths:
       #更改对应文件夹项目名
-      - 'alist-for-PaaS/**'
-      - 'CloudFlare-ImgBed/**'
+      - 'alist-for-paas/**'
+      - 'cloudflare-imgbed/**'
       
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
          #更改对应文件夹项目名
-        folder: [alist-for-PaaS, CloudFlare-ImgBed]
+        folder: [alist-for-paas, cloudflare-imgbed]
 
     steps:
       - name: Checkout repository

@@ -7,7 +7,7 @@ def get_project_folders():
     root = Path.cwd()
     exclude_dirs = {'.github', '.git'}
     projects = [
-        f.name for f in root.iterdir()
+        f.name.lower() for f in root.iterdir()
         if f.is_dir() and f.name not in exclude_dirs and (f / 'Dockerfile').exists()
     ]
     return projects
