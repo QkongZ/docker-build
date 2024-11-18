@@ -2,22 +2,22 @@ name: Update Docker Build Workflow
 
 on:
   push:
+    branches:
+      - main
     paths:
       - '**/*'  # 监听所有文件的变更
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   update-workflow:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v4  # 保留一个最新版本
+      - uses: actions/setup-python@v5  # 保留一个最新版本
         with:
           python-version: '3.x'
 
