@@ -10,7 +10,7 @@ on:
 permissions:
   contents: write
   actions: write
-  workflows: write  # 关键：允许修改工作流文件
+  #workflows: write
 
 jobs:
   update-workflow:
@@ -28,7 +28,8 @@ jobs:
 
       - name: Commit updated workflow
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
